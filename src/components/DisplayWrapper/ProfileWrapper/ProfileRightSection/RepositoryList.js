@@ -20,6 +20,8 @@ const RepositoryList = () => {
                 visibility={repo.private ? "private" : "public"}
                 language={repo.language}
                 description={repo.description}
+                forks={repo.forks_count}
+                stars={repo.watchers}
               ></RepositoryCard>
             );
           })
