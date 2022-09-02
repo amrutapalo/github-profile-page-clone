@@ -1,27 +1,39 @@
-import { Octokit } from "octokit";
+import ActionTypes from "../constants/ActionTypes";
 
-// const octokit = new Octokit({
-//   auth: "",
-// });
+let initialUserProfileState = {
+  loading: 0,
+  data: {},
+  isEdit: false,
+};
 
-// const getUserData = async () => {
-//   const userData = await octokit.request("GET /users/{username}", {
-//     username: "amrutapalo",
-//   });
-//   console.log(userData);
+let initialUserRepoState = {
+  loading: 0,
+  data: {},
+};
 
-//   return userData;
-// };
-
-// let initialUserProfileState = {};
-// (async function() {
-//   initialUserProfileState = await getUserData();
-//   console.log(initialUserProfileState);
-// })();
-
-
-export const userDataReducer = (state = 0, action) => {
+export const userDataReducer = (state = initialUserProfileState, action) => {
   console.log("------ userDataReducer -------");
-  // console.log(state);
-  return state;
+  console.log(state);
+  switch (action.type) {
+    case ActionTypes.FETCH_USER_DATA:
+      console.log(action.payload);
+      return { ...state, data: action.payload };
+    case ActionTypes.EDIT_USER_DATA:
+      console.log(action.payload);
+      return { ...state, isEdit: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const userRepoReducer = (state = initialUserRepoState, action) => {
+  console.log("------ userRepoReducer -------");
+  console.log(state);
+  switch (action.type) {
+    case ActionTypes.FETCH_USER_REPO:
+      console.log(action.payload);
+      return { ...state, data: action.payload};
+    default:
+      return state;
+  }
 };

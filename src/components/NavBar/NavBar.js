@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./NavBar.css";
 
 const NavBar = () => {
+  const userProfilePicture = useSelector((state) => state.userDataReducer.data.avatar_url);
+  console.log(userProfilePicture);
+
   return (
     <div className="navBar">
       <ul className="navBar-left">
@@ -49,7 +53,7 @@ const NavBar = () => {
             ></path>
           </svg>
         </li>
-        <li className="mobile-menu-content">
+        <li className="mobile-menu-content" id="add-icon">
           <svg
             aria-hidden="true"
             height="16"
@@ -64,9 +68,11 @@ const NavBar = () => {
               d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"
             ></path>
           </svg>
+          <span class="dropdown-caret"></span>
         </li>
-        <li className="mobile-menu-content">
-          <img src="" alt="" />
+        <li className="mobile-menu-content" id="avatar">
+          <img src={userProfilePicture} alt="avatar" />
+          <span class="dropdown-caret"></span>
         </li>
       </ul>
     </div>

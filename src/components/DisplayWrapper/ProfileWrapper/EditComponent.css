@@ -1,0 +1,192 @@
+:root {
+  --color-border-default: #d0d7de;
+  --color-canvas-default: #ffffff;
+  --color-primer-shadow-inset: inset 0 1px 0 rgba(208, 215, 222, 0.2);
+  --color-fg-muted: #57606a;
+
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+  --color-btn-active-border: rgba(27, 31, 36, 0.15);
+  --color-btn-selected-bg: hsla(220, 14%, 94%, 1);
+  --color-btn-focus-bg: #f6f8fa;
+  --color-btn-focus-border: rgba(27, 31, 36, 0.15);
+  --color-btn-focus-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --color-btn-shadow-active: inset 0 0.15em 0.3em rgba(27, 31, 36, 0.15);
+  --color-btn-shadow-input-focus: 0 0 0 0.2em rgba(9, 105, 218, 0.3);
+  --color-btn-counter-bg: rgba(27, 31, 36, 0.08);
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #2da44e;
+  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-primary-hover-bg: #2c974b;
+  --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-selected-bg: hsla(137, 55%, 36%, 1);
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 45, 17, 0.2);
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-focus-bg: #2da44e;
+  --color-btn-primary-focus-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-focus-shadow: 0 0 0 3px rgba(45, 164, 78, 0.4);
+  --color-btn-primary-icon: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-counter-bg: rgba(255, 255, 255, 0.2);
+  --color-btn-outline-text: #0969da;
+  --color-btn-outline-hover-text: #ffffff;
+  --color-btn-outline-hover-bg: #0969da;
+  --color-btn-outline-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-outline-hover-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-outline-hover-inset-shadow: inset 0 1px 0
+    rgba(255, 255, 255, 0.03);
+  --color-btn-outline-hover-counter-bg: rgba(255, 255, 255, 0.2);
+  --color-btn-outline-selected-text: #ffffff;
+  --color-btn-outline-selected-bg: hsla(212, 92%, 42%, 1);
+  --color-btn-outline-selected-border: rgba(27, 31, 36, 0.15);
+  --color-btn-outline-selected-shadow: inset 0 1px 0 rgba(0, 33, 85, 0.2);
+  --color-btn-outline-disabled-text: rgba(9, 105, 218, 0.5);
+  --color-btn-outline-disabled-bg: #f6f8fa;
+  --color-btn-outline-disabled-counter-bg: rgba(9, 105, 218, 0.05);
+  --color-btn-outline-focus-border: rgba(27, 31, 36, 0.15);
+  --color-btn-outline-focus-shadow: 0 0 0 3px rgba(5, 80, 174, 0.4);
+  --color-btn-outline-counter-bg: rgba(9, 105, 218, 0.1);
+  --color-btn-danger-text: #cf222e;
+  --color-btn-danger-hover-text: #ffffff;
+  --color-btn-danger-hover-bg: #a40e26;
+  --color-btn-danger-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-danger-hover-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-danger-hover-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-danger-hover-counter-bg: rgba(255, 255, 255, 0.2);
+  --color-btn-danger-selected-text: #ffffff;
+  --color-btn-danger-selected-bg: hsla(356, 72%, 44%, 1);
+  --color-btn-danger-selected-border: rgba(27, 31, 36, 0.15);
+  --color-btn-danger-selected-shadow: inset 0 1px 0 rgba(76, 0, 20, 0.2);
+  --color-btn-danger-disabled-text: rgba(207, 34, 46, 0.5);
+  --color-btn-danger-disabled-bg: #f6f8fa;
+  --color-btn-danger-disabled-counter-bg: rgba(207, 34, 46, 0.05);
+  --color-btn-danger-focus-border: rgba(27, 31, 36, 0.15);
+  --color-btn-danger-focus-shadow: 0 0 0 3px rgba(164, 14, 38, 0.4);
+  --color-btn-danger-counter-bg: rgba(207, 34, 46, 0.1);
+  --color-btn-danger-icon: #cf222e;
+  --color-btn-danger-hover-icon: #ffffff;
+}
+
+.editComponent label {
+  font-weight: 600;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+.form-control,
+.form-select {
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-fg-default);
+  vertical-align: middle;
+  background-color: var(--color-canvas-default);
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid var(--color-border-default);
+  border-radius: 6px;
+  box-shadow: var(--color-primer-shadow-inset);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+  width: 100%;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+::placeholder {
+  color: rgb(168, 166, 166);
+  font-weight: 400;
+}
+
+textarea.form-control {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.note {
+  min-height: 17px;
+  margin: 4px 0 2px;
+  font-size: 12px;
+  color: var(--color-fg-muted);
+  margin-bottom: 8px;
+}
+.button-group{
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    gap: 5px;
+}
+.button-group .btn {
+  color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
+  border-color: var(--color-btn-border);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+
+  position: relative;
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+
+  padding: 3px 12px;
+  font-size: 12px;
+  line-height: 20px;
+
+  width: max-content;
+}
+
+.button-group .save {
+  color: var(--color-btn-primary-text);
+  background-color: var(--color-btn-primary-bg);
+  border-color: var(--color-btn-primary-border);
+  box-shadow: var(--color-btn-primary-shadow),
+    var(--color-btn-primary-inset-shadow);
+}
+
+.button-group .cancel {
+    border-color: rgb(209, 209, 209);
+  }
+  
+
+  .edit-input-user-details{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .edit-input-user-details svg path{
+      fill: var(--color-fg-muted);
+  }

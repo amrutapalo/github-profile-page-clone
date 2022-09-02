@@ -1,8 +1,10 @@
 import { Octokit } from "octokit";
 import "./App.css";
-import NavBar from './components/NavBar/NavBar';
-import DisplayWrapper from './components/DisplayWrapper/DisplayWrapper';
-import { useSelector } from "react-redux";
+import NavBar from "./components/NavBar/NavBar";
+import DisplayWrapper from "./components/DisplayWrapper/DisplayWrapper";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchUserData, fetchUserRepo } from "./redux/actions/Actions";
 
 // class Commits {
 //   constructor(sha, date) {
@@ -34,10 +36,14 @@ import { useSelector } from "react-redux";
 // }
 
 function App() {
-  const userData = useSelector((state) => state.userDataReducer);
-  let userCommitResponseData = [];
-  let totalCommitsPerMonth = 0;
-  let totalCreateRepositoriesPerMonth = 0;
+  const userData = useSelector((state) => state);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUserData());
+    dispatch(fetchUserRepo());
+  }, []);
+
+  console.log(userData);
 
   let repoMappedCommitsByMonth = {};
 
@@ -142,7 +148,7 @@ function App() {
   };
 
   const octokit = new Octokit({
-    auth: process.env.GITHUB_API_TOKEN
+    auth: process.env.GITHUB_API_TOKEN,
   });
 
   const getData = async () => {
@@ -150,24 +156,22 @@ function App() {
       username: "amrutapalo",
     });
 
-    const userRepos = await octokit.request("GET /users/{user}/repos", {
-      user: "amrutapalo",
-    });
-
     getCommitsByMonth(9);
     getNewRepositoriesByMonth(8);
   };
 
-  getData();
+  // getData();
 
   // console.log(userData.userData);
 
-  return (<div className="App">
-    <div className="env-container">
-      <NavBar></NavBar>
-      <DisplayWrapper></DisplayWrapper>
+  return (
+    <div className="App">
+      <div className="env-container">
+        <NavBar></NavBar>
+        <DisplayWrapper></DisplayWrapper>
+      </div>
     </div>
-  </div>);
+  );
 }
 
 export default App;

@@ -1,5 +1,6 @@
 :root {
   --color-fg-muted: #4b525b;
+  --color-fg-default: #24292f;
 
   --color-btn-text: #24292f;
   --color-btn-bg: #f6f8fa;
@@ -18,6 +19,9 @@
   --color-btn-shadow-input-focus: 0 0 0 0.2em rgba(9, 105, 218, 0.3);
   --color-btn-counter-bg: rgba(27, 31, 36, 0.08);
   --color-btn-primary-text: #ffffff;
+
+  --color-btn-hover-bg: #f3f4f6;
+
 }
 
 .ProfileInformation {
@@ -25,6 +29,11 @@
   height: max-content;
   display: flex;
   flex-direction: column;
+  padding-left: 4em;
+}
+
+.hide{
+  display: none;
 }
 
 .ProfileInformation * {
@@ -33,6 +42,10 @@
 
 .ProfileInformation svg {
   width: max-content;
+}
+
+.profile-image img {
+  border-radius: 50%;
 }
 
 .ProfileInformation .name {
@@ -60,8 +73,8 @@
   list-style: none;
 }
 
-.user-status-container div{
-    margin-bottom: 1em;
+.user-status-container div {
+  margin-bottom: 1em;
 }
 
 .edit-profile-button button {
@@ -70,7 +83,7 @@
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
   padding: 5px 16px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 20px;
   white-space: nowrap;
   /* vertical-align: middle; */
@@ -81,10 +94,51 @@
   transition-property: color, background-color, box-shadow, border-color;
 }
 
-
-.followers-following{
+.edit-profile-button button:hover{
+  background-color: var(--color-btn-hover-bg);
 }
 
-.followers-following a{
-   text-decoration: none;
+.followers-following {
+  display: flex;
+  gap: 3px;
+}
+.followers-following span {
+  display: flex;
+  color: var(--color-fg-default);
+  font-weight: 600;
+  width: max-content;
+}
+
+.followers-following a {
+  text-decoration: none;
+  color: var(--color-fg-default);
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+/* user-details */
+
+.user-details ul li svg path {
+  fill: var(--color-fg-muted);
+}
+
+.user-details ul li {
+  color: var(--color-fg-muted);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+.user-details ul li span {
+  padding: 4px 0;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.user-details ul li.hide {
+  display: none;
 }
