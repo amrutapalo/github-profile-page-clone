@@ -1,0 +1,7 @@
+.ProfileWrapper{
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    width: 100%;
+    gap: 24px;
+}

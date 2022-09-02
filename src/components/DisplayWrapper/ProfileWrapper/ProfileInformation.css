@@ -1,0 +1,90 @@
+:root {
+  --color-fg-muted: #4b525b;
+
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+  --color-btn-active-border: rgba(27, 31, 36, 0.15);
+  --color-btn-selected-bg: hsla(220, 14%, 94%, 1);
+  --color-btn-focus-bg: #f6f8fa;
+  --color-btn-focus-border: rgba(27, 31, 36, 0.15);
+  --color-btn-focus-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --color-btn-shadow-active: inset 0 0.15em 0.3em rgba(27, 31, 36, 0.15);
+  --color-btn-shadow-input-focus: 0 0 0 0.2em rgba(9, 105, 218, 0.3);
+  --color-btn-counter-bg: rgba(27, 31, 36, 0.08);
+  --color-btn-primary-text: #ffffff;
+}
+
+.ProfileInformation {
+  width: 25%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProfileInformation * {
+  width: 100%;
+}
+
+.ProfileInformation svg {
+  width: max-content;
+}
+
+.ProfileInformation .name {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.ProfileInformation .name .profile-name {
+  font-size: 24px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.ProfileInformation .name .user-name {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--color-fg-muted);
+}
+
+.ProfileInformation .user-details ul li {
+  list-style: none;
+}
+
+.user-status-container div{
+    margin-bottom: 1em;
+}
+
+.edit-profile-button button {
+  color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  /* vertical-align: middle; */
+  border: 1px solid var(--color-btn-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+}
+
+
+.followers-following{
+}
+
+.followers-following a{
+   text-decoration: none;
+}

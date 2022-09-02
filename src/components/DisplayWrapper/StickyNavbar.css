@@ -12,13 +12,14 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border-bottom: 0.1px solid #57606a6e;
 }
 .sticky-navbar-container {
   width: 100%;
   height: 100%;
   position: sticky;
-  border-bottom: 0.2px solid #57606a9b;
   z-index: 3;
+  border-bottom: 0.1px solid #57606a54;
 }
 .sticky-navbar-container ul {
   display: flex;
