@@ -8,7 +8,7 @@ let initialUserProfileState = {
 
 let initialUserRepoState = {
   loading: 0,
-  data: {},
+  data: [],
 };
 
 export const userDataReducer = (state = initialUserProfileState, action) => {
