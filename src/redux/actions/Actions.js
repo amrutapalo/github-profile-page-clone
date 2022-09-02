@@ -7,7 +7,7 @@ export const fetchUserData = () => {
   });
   return async function (dispatch) {
     const response = await octokit.request("GET /users/{username}", {
-      username: "amrutapalo",
+      username: "erossignon",
     });
 
     dispatch({ type: ActionTypes.FETCH_USER_DATA, payload: response.data });
@@ -24,7 +24,7 @@ export const fetchUserRepo = () => {
   });
   return async function (dispatch) {
     const response = await octokit.request("GET /users/{user}/repos", {
-      user: "amrutapalo",
+      user: "erossignon",
     });
 
     dispatch({ type: ActionTypes.FETCH_USER_REPO, payload: response.data });

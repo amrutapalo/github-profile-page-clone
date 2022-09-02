@@ -1,0 +1,152 @@
+:root {
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: rgba(84, 174, 255, 0.4);
+  --color-accent-subtle: #ddf4ff;
+  --color-border-default: #d0d7de;
+  --color-fg-muted: #57606a;
+
+  --color-css: #563d7c;
+  --color-javascript: #f1e05a;
+  --color-java: #b07219;
+  --color-c: #555555;
+  --color-html: #e34c26;
+  --color-jupyter: #da5b0b;
+  --color-dart: #00b4ab;
+  --color-typescript: #3178c6;
+  --color-cpp: #f34b7d;
+  --color-ruby: #701516;
+  --color-vim: #199f4b;
+  --color-visual-basic: #945db7;
+  --color-python: #3572a5;
+  --color-csharp: #178600;
+}
+
+.CSS {
+  background-color: var(--color-css);
+}
+
+.JavaScript {
+  background-color: var(--color-javascript);
+}
+
+.Java {
+  background-color: var(--color-java);
+}
+
+.C {
+  background-color: var(--color-c);
+}
+
+.HTML {
+  background-color: var(--color-html);
+}
+
+.Ruby {
+  background-color: var(--color-ruby);
+}
+
+.Visual {
+  background-color: var(--color-visual-basic);
+}
+
+.VimL {
+  background-color: var(--color-vim);
+}
+
+.Python {
+  background-color: var(--color-python);
+}
+
+.RepositoryCard {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.repo-list-item-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.repo-icon-title-visibility {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.repo-icon-title-visibility a {
+  color: var(--color-accent-fg);
+  text-decoration: none;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 14px;
+}
+
+.visibility {
+  color: var(--color-fg-muted);
+  border-color: var(--color-border-default);
+  display: inline;
+  padding: 0.05em 0.5em;
+  font-size: 85%;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 2em;
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+.repo-language-color {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--color-primer-border-contrast);
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.repo-code-language {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  bottom: 10px;
+  left: 16px;
+}
+
+.repo-description {
+  font-size: 12px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  color: var(--color-fg-muted);
+}
+
+.programming-language {
+  font-size: 12px;
+}
+
+.RepositoryCard {
+  border-color: var(--color-border-default);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  width: 48%;
+  position: relative;
+  height: 133px;
+}
+
+.repo-container h2 {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
