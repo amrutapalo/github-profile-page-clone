@@ -1,0 +1,112 @@
+
+    const repoData = await octokit.request(
+      "GET /repos/{owner}/{repo}/stats/code_frequency",
+      {
+        owner: "amrutapalo",
+        repo: "amrutapalo",
+      }
+    );
+
+    const hourlyCommitsByRepo = await octokit.request(
+      "GET /repos/{owner}/{repo}/stats/punch_card",
+      {
+        owner: "amrutapalo",
+        repo: "amrutapalo",
+      }
+    );
+
+    const weeklyCommitsByRepo = await octokit.request(
+      "GET /repos/{owner}/{repo}/stats/participation",
+      {
+        owner: "amrutapalo",
+        repo: "amrutapalo",
+      }
+    );
+
+
+    let userActivityResponseObject = {
+    id: "",
+    id: "",
+    created_at: "",
+    commits: {
+      sha: "",
+      date: "",
+    },
+    commitURL: "",
+    noOfCommits: "",
+  };
+
+
+console.log(userRepos.data);
+
+    for (let i = 0; i < userRepos.data.length; i++) {
+      let userActivityResponseObject = new UserActivityByRepo(
+        userRepos.data[i].id,
+        userRepos.data[i].name,
+        userRepos.data[i].created_at,
+        null,
+        userRepos.data[i].commits_url,
+        null
+      );
+
+      // userActivityResponseObject.show();
+    }
+
+
+
+//creation of event + creation of branch - two events
+//why in practice there's only one?
+
+
+
+Points:
+1. if a branch is merged in next month, commit count won't be included in passed month
+2. Why is redux being rendered thrice?
+
+
+
+
+
+
+//colours -- css variables
+
+
+    --color-header-text: rgba(255,255,255,0.7);
+    --color-header-bg: #24292f;
+    --color-primer-border-active: #fd8c73;
+    --color-fg-muted: #57606a;
+
+
+    --color-scale-green-0: #dafbe1;
+    --color-scale-green-1: #aceebb;
+    --color-scale-green-2: #6fdd8b;
+    --color-scale-green-3: #4ac26b;
+    --color-scale-green-4: #2da44e;
+    --color-scale-green-5: #1a7f37;
+    --color-scale-green-6: #116329;
+    --color-scale-green-7: #044f1e;
+    --color-scale-green-8: #003d16;
+    --color-scale-green-9: #002d11;
+
+    --color-accent-fg: #0969da;
+    --color-accent-emphasis: #0969da;
+
+    --color-css: #563d7c;
+    --color-javascript: #f1e05a;
+     --color-java: #b07219;
+     --color-c: #555555;
+     --color-html: #e34c26;
+
+--color-btn-text: #24292f;
+--color-btn-bg: #f6f8fa;
+--color-btn-border: rgba(27,31,36,0.15);
+--color-btn-shadow: 0 1px 0 rgba(27,31,36,0.04);
+--color-btn-inset-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
+--color-btn-hover-bg: #f3f4f6;
+--color-btn-hover-border: rgba(27,31,36,0.15);
+--color-btn-active-bg: hsla(220,14%,93%,1);
+--color-btn-active-border: rgba(27,31,36,0.15);
+
+
+https://docs.github.com/en/rest/metrics/statistics
+
