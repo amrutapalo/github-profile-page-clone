@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./StickyNavbar.css";
 
 const StickyNavbar = () => {
+  const userData = useSelector((state) => state);
+  console.log(userData.userRepoReducer.data.length);
   return (
     <div className="sticky-navbar">
       <div className="sticky-navbar-container">
@@ -43,7 +46,7 @@ const StickyNavbar = () => {
               </svg>
               Repositories
               <span title="15" style={{display:"inline-block"}} className="counter">
-                15
+                {userData.userRepoReducer.data.length}
               </span>
             </a>
           </li>

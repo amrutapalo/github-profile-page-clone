@@ -13,7 +13,7 @@ const RepositoryList = () => {
       <h2>Popular repositories</h2>
       <div className="RepositoryList">
         {userData.userRepoReducer.data.length !== 0 ? (
-          userData.userRepoReducer.data.map((repo) => {
+          userData.userRepoReducer.data.slice(0, 6).map((repo) => {
             return (
               <RepositoryCard
                 name={repo.name}
