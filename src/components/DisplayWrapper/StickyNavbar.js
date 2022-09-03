@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./StickyNavbar.css";
 
+import { Link } from "react-router-dom";
+
 const StickyNavbar = () => {
   const userData = useSelector((state) => state);
   console.log(userData.userRepoReducer.data.length);
@@ -10,7 +12,7 @@ const StickyNavbar = () => {
       <div className="sticky-navbar-container">
         <ul>
           <li className="active">
-            <a href="">
+            <Link to="/">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -26,10 +28,10 @@ const StickyNavbar = () => {
                 ></path>
               </svg>
               Overview
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link to="/repositories">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -45,13 +47,17 @@ const StickyNavbar = () => {
                 ></path>
               </svg>
               Repositories
-              <span title="15" style={{display:"inline-block"}} className="counter">
+              <span
+                title="15"
+                style={{ display: "inline-block" }}
+                className="counter"
+              >
                 {userData.userRepoReducer.data.length}
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link to="/">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -67,13 +73,13 @@ const StickyNavbar = () => {
                 ></path>
               </svg>
               Projects
-              <span title="0" style={{display:"none"}} className="counter">
+              <span title="0" style={{ display: "none" }} className="counter">
                 0
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link to="/">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -89,13 +95,13 @@ const StickyNavbar = () => {
                 ></path>
               </svg>
               Packages
-              <span title="0" style={{display:"none"}} className="counter">
+              <span title="0" style={{ display: "none" }} className="counter">
                 0
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="">
+            <Link to="/">
               <svg
                 aria-hidden="true"
                 height="16"
@@ -114,12 +120,12 @@ const StickyNavbar = () => {
               <span
                 title="0"
                 hidden="hidden"
-                style={{display:"none"}}
+                style={{ display: "none" }}
                 className="counter"
               >
                 0
               </span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
