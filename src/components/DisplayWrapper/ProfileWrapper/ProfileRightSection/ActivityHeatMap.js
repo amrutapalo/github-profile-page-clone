@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ActivityHeatMap = () => {
   let response = useSelector((state) => state.userContributionReducer.data);
   console.log(response);
-  console.log(Object.keys(response).length !== 0);
+  // console.log(Object.keys(response).length !== 0);
   const dispatch = useDispatch();
   const dailyContribution = new Array(364).fill(0);
 

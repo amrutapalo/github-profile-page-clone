@@ -58,7 +58,7 @@ export const fetchUserContributionData = () => {
   return async function (dispatch) {
     let username = "erossignon";
     const headers = {
-      Authorization: `bearer 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`,
+      Authorization: `bearer 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`,
     };
     const body = {
       query: `query {
@@ -89,8 +89,8 @@ export const fetchUserContributionData = () => {
       headers: headers,
     });
     const response = await data.json();
-    console.log(response.data.user.contributionsCollection);
-    dispatch({ type: ActionTypes.FETCH_CONTRIBUTION_DATA, payload: response.data.user.contributionsCollection });
+    console.log(response);
+    dispatch({ type: ActionTypes.FETCH_CONTRIBUTION_DATA, payload: response});
   };
 };
 
