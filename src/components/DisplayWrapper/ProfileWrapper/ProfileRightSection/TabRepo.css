@@ -1,0 +1,11 @@
+.repository-tab-RepositoryList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.repository-tab-container {
+  margin-top: 24px;
+}

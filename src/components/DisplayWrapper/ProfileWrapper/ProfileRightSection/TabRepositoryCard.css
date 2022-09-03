@@ -58,31 +58,27 @@
   background-color: var(--color-python);
 }
 
-.RepositoryCard {
-  padding-right: 16px;
-  padding-left: 16px;
-}
 
-.repo-list-item-content {
+.TabRepositoryCard .repo-list-item-content {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
 
-.RepositoryCard .repo-icon-title-visibility {
+.TabRepositoryCard .repo-icon-title-visibility {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 }
 
-.repo-icon-title-visibility a {
+.TabRepositoryCard .repo-icon-title-visibility a {
   color: var(--color-accent-fg);
   text-decoration: none;
   font-weight: 600;
   word-break: break-word;
   overflow-wrap: break-word;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .visibility {
@@ -139,38 +135,37 @@
   width: 12px;
 }
 
-.RepositoryCard {
-  border-color: var(--color-border-default);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 6px;
+.TabRepositoryCard {
+  border-bottom: 1px solid var(--color-border-default);
   padding: 16px;
-  margin-bottom: 16px;
   margin-right: 16px;
-  width: 48%;
+  width: 100%;
   position: relative;
   height: 133px;
+  margin-left: 3px;
+  padding-left: 7px;
 }
 
-.repo-container h2 {
+.TabRepositoryCard .repo-container h2 {
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 8px;
   letter-spacing: 0.3px;
 }
 
-.repo-footer {
+.TabRepositoryCard .repo-footer {
   position: absolute;
-  bottom: 10px;
-  left: 16px;
+  bottom: 20px;
+  left: 7px;
   display: flex;
   gap: 10px;
   justify-content: space-between;
 }
 
-.fork-count, .starred-count{
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-    align-items: center;
+.fork-count,
+.starred-count {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
 }
