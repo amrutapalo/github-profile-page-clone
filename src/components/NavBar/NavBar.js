@@ -4,7 +4,6 @@ import "./NavBar.css";
 
 const NavBar = () => {
   const userProfilePicture = useSelector((state) => state.userDataReducer.data.avatar_url);
-  console.log(userProfilePicture);
 
   return (
     <div className="navBar">

@@ -4,7 +4,11 @@ import NavBar from "./components/NavBar/NavBar";
 import DisplayWrapper from "./components/DisplayWrapper/DisplayWrapper";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchUserData, fetchUserRepo } from "./redux/actions/Actions";
+import {
+  fetchUserData,
+  fetchUserRepo,
+  fetchUserContributionData,
+} from "./redux/actions/Actions";
 
 // class Commits {
 //   constructor(sha, date) {
@@ -41,9 +45,10 @@ function App() {
   useEffect(() => {
     dispatch(fetchUserData());
     dispatch(fetchUserRepo());
+    dispatch(fetchUserContributionData());
   }, []);
 
-  console.log(userData);
+  // console.log(userData);
 
   let repoMappedCommitsByMonth = {};
 
@@ -156,8 +161,22 @@ function App() {
       username: "amrutapalo",
     });
 
-    getCommitsByMonth(9);
-    getNewRepositoriesByMonth(8);
+    // const userCommitEvents = await octokit.paginate(
+    //   "GET /users/{user}/events/public",
+    //   {
+    //     user: "amrutapalo",
+    //   },
+    //   (response) =>
+    //     response.data.filter(
+    //       (event) => new Date(event.created_at).getFullYear() === 2022
+    //     )
+    // );
+
+    // console.log(userCommitEvents);
+    // console.log(typeof new Date(userCommitEvents[0].created_at).getFullYear());
+
+    // getCommitsByMonth(9);
+    // getNewRepositoriesByMonth(8);
   };
 
   // getData();

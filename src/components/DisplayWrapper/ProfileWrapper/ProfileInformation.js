@@ -6,7 +6,7 @@ import "./ProfileInformation.css";
 
 const ProfileInformation = () => {
   const userData = useSelector((state) => state.userDataReducer.data);
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <div className="ProfileInformation">

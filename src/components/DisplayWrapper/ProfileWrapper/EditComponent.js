@@ -6,7 +6,7 @@ import { editUserData } from "../../../redux/actions/Actions";
 const EditComponent = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.userDataReducer.data);
-  console.log(userData);
+  // console.log(userData);
 
   const isEdit = useSelector((state) => state.userDataReducer.isEdit);
 

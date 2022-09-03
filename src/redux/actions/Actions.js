@@ -52,3 +52,49 @@ export const fetchUserRepo = () => {
     });
   };
 };
+
+export const fetchUserContributionData = () => {
+  console.log("---- fetchUserContributionData");
+  return async function (dispatch) {
+    let username = "erossignon";
+    const headers = {
+      Authorization: `bearer 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`,
+    };
+    const body = {
+      query: `query {
+            user(login: "${username}") {
+              name
+              contributionsCollection(from: "2021-12-31T23:05:23Z") {
+                contributionCalendar {
+                  colors
+                  totalContributions
+                  weeks {
+                    contributionDays {
+                      color
+                      contributionCount
+                      date
+                      weekday
+                    }
+                    firstDay
+                  }
+                }
+              }
+            }
+          }`,
+    };
+
+    const data = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: headers,
+    });
+    const response = await data.json();
+    console.log(response.data.user.contributionsCollection);
+    dispatch({ type: ActionTypes.FETCH_CONTRIBUTION_DATA, payload: response.data.user.contributionsCollection });
+  };
+};
+
+
+export const setDailyContributionData = (request) => {
+  return { type: ActionTypes.SET_DAILY_CONTRIBUTION_DATA, payload: request };
+};

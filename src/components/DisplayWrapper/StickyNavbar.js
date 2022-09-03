@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const StickyNavbar = () => {
   const userData = useSelector((state) => state);
-  console.log(userData.userRepoReducer.data.length);
+  // console.log(userData.userRepoReducer.data.length);
   return (
     <div className="sticky-navbar">
       <div className="sticky-navbar-container">
@@ -31,7 +31,7 @@ const StickyNavbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/repositories">
+            <Link to="/repositories" onClick={() => console.log("clicked")}>
               <svg
                 aria-hidden="true"
                 height="16"
