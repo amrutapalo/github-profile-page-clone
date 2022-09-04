@@ -5,29 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import Plot from "react-plotly.js";
 
 const ActivityHeatMap = () => {
+  let heatmapY = [[], [], [], [], [], [], []];
+  let dateByWeekArray = [[], [], [], [], [], [], []];
+  console.log(heatmapY);
   let received = useSelector((state) => state.userContributionReducer.data);
-  // let user = { ...received.data };
-  console.log(received.data);
+  let user = { ...received.data };
+  let level1 = { ...user.user };
+  let response = { ...level1.contributionsCollection };
+  console.log(response);
   // console.log(Object.keys(response).length !== 0);
   const dispatch = useDispatch();
-  const dailyContribution = new Array(364).fill(0);
+  const dailyContribution = new Array(365).fill(0);
 
   let count = 0;
-
-  // if (Object.keys(response).length !== 0) {
-  //   for (let i = 0; i < response.contributionCalendar.weeks.length; i++) {
-  //     for (
-  //       let j = 0;
-  //       j < response.contributionCalendar.weeks[i].contributionDays.length;
-  //       j++
-  //     ) {
-  //       dailyContribution[count++] =
-  //         response.contributionCalendar.weeks[i].contributionDays[
-  //           j
-  //         ].contributionCount;
-  //     }
-  //   }
-  // }
 
   //heatmap
 
@@ -55,55 +45,144 @@ const ActivityHeatMap = () => {
       yyyy = new Date(currentDate).getFullYear();
       dateArray.push(yyyy + "-" + mm + "-" + dd);
 
+      let weekday = new Date(currentDate).getDay();
+      dateByWeekArray[weekday].push(currentDate);
+
       currentDate = currentDate.addDays(1);
     }
     return dateArray;
   }
 
-  var dateRange = getDates(new Date().minusDays(363), new Date());
+  console.log("date by week-", dateByWeekArray);
+  var dateRange = getDates(new Date().minusDays(365), new Date());
   console.log(dateRange);
 
-  var xValues = ["A", "B", "C", "D", "E"];
+  // commit filter
+
+  if (Object.keys(response).length !== 0) {
+    for (let i = 0; i < response.contributionCalendar.weeks.length; i++) {
+      for (
+        let j = 0;
+        j < response.contributionCalendar.weeks[i].contributionDays.length;
+        j++
+      ) {
+        let weekday = new Date(
+          response.contributionCalendar.weeks[i].contributionDays[j].date
+        ).getDay();
+
+        let contributions =
+          response.contributionCalendar.weeks[i].contributionDays[j]
+            .contributionCount;
+
+        heatmapY[weekday].push(contributions);
+      }
+    }
+  }
+
+  console.log(heatmapY);
+  var xValues = [
+    "Oct",
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+  ];
 
   // var yValues = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var yValues = [
-    "Saturday",
-    "Friday",
-    "Thursday",
-    "Wednesday",
-    "Tuesday",
-    "Monday",
-    "Sunday",
+    "Sat",
+    "Fri",
+    "Thur",
+    "Wed",
+    "Tue",
+    "Mon",
+    "Sun",
   ];
 
-  var zValues = [
-    [1, 8, 0, 1, 3],
-    [1, 0, 0, 1, 0],
-    [1, 2, 0, 3, 3],
-    [1, 8, 0, 1, 3],
-    [1, 5, 0, 4, 3],
-    [1, 4, 0, 2, 3],
-    [1, 6, 0, 1, 3],
-  ];
+  var zValues = heatmapY.map(function (nested) {
+    return nested.map((element) => element / 10);
+  });
+  console.log(zValues);
 
   var colorscaleValue = [
     [0, "#ebedf0"],
-    [0.2, "#c6e48b"],
-    [0.4, "#40c463"],
-    [0.6, "#30a14e"],
+    [0.1, "#c6e48b"],
+    [0.3, "#40c463"],
+    [0.5, "#30a14e"],
     [1, "#216e39"],
   ];
 
   var mapData = [
     {
-      x: xValues,
+      x: dateByWeekArray[0],
       y: yValues,
-      z: zValues,
+      z: [
+        zValues[6],
+        zValues[5],
+        zValues[4],
+        zValues[3],
+        zValues[2],
+        zValues[1],
+        zValues[0],
+      ],
       type: "heatmap",
       colorscale: colorscaleValue,
-      showscale: true,
+      showscale: false,
+      xgap: 4,
+      ygap: 5,
+      hoverinfo: "none",
+      hovermode:false
     },
   ];
+
+  var layout = {
+    width: 800,
+    height: 133,
+    margin: {
+      t: 20,
+      b: 0,
+      l: 30,
+      r: 0,
+    },
+    font: {
+      family: "Arial",
+      size: 11,
+      color: "#575757",
+    },
+    xaxis: {
+      showdividers: false,
+      showgrid: false,
+      showspikes: false,
+      side: "top",
+      ticklabeloverflow: "hide past div",
+      showticklabels: true,
+      ticklen: 0,
+      // type: "date"
+    },
+    yaxis: {
+      showdividers: false,
+      showgrid: false,
+      showspikes: false,
+      ticklabeloverflow: "hide past div",
+      showticklabels: true,
+      ticklen: 0,
+      // type: "date"
+    },
+
+    // grid: {
+    //   xside: "top",
+    // },
+    // margin: {
+    //   t: 10,
+    // },
+  };
 
   // [
   //   {
@@ -121,22 +200,19 @@ const ActivityHeatMap = () => {
     <div className="ActivityHeatMap">
       <div className="activity-calendar">
         <div className="calender-header">
-          {/* { Object.keys(response).length !== 0 && <span className="activity-calender-count-text">
-            {response.contributionCalendar.totalContributions} contributions in
-            the last year
-          </span>} */}
+          {Object.keys(response).length !== 0 && (
+            <span className="activity-calender-count-text">
+              {response.contributionCalendar.totalContributions} contributions
+              in the last year
+            </span>
+          )}
         </div>
-        {/* <Heatmap
-          colour={["#ebedf0", "#c6e48b", "#40c463", "#30a14e", "#216e39"]}
-          squareNumber={364}
-          count={[...dailyContribution]}
-          squareGap="4px"
-          squareSize="10px"
-        ></Heatmap> */}
-        <Plot
-          data={mapData}
-          layout={{ width: 320, height: 240, title: "A Fancy Plot" }}
-        />
+        <div className="plotly-container">
+        <div className="plotly">
+          <Plot data={mapData} layout={layout} config={{displayModeBar: false}}/>
+        </div>
+
+        </div>
       </div>
     </div>
   );

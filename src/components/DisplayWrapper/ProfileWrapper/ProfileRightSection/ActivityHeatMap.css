@@ -1,4 +1,12 @@
-.gFcAvC{
-    margin: 0 !important;
+.plotly{
+    width: 100%;
 }
 
+.plotly-container{
+    border: .5px solid rgb(224, 223, 223);
+    border-radius: 10px;
+    overflow: hidden;
+    width: max-content;
+    padding: 1em;
+    margin-top: 1em;
+}

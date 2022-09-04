@@ -62,7 +62,8 @@ Date.prototype.minusDays = function (days) {
 
 export const fetchUserContributionData = () => {
   console.log("---- fetchUserContributionData");
-  let fromDate = new Date().minusDays(363);
+  let fromDate = new Date().minusDays(365);
+  // ${fromDate}
 
   let mm = String(fromDate.getMonth() + 1).padStart(2, "0"); //January is 0!
   let dd = String(fromDate.getDate()).padStart(2, "0");
@@ -70,15 +71,15 @@ export const fetchUserContributionData = () => {
   fromDate = yyyy + "-" +mm + "-" + dd;
 
   return async function (dispatch) {
-    let username = "amrutapalo";
+    let username = "erossignon";
     const headers = {
-      Authorization: `bearer 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`,
+      Authorization: `bearer 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`,
     };
     const body = {
       query: `query {
             user(login: "${username}") {
               name
-              contributionsCollection(from: "${fromDate}T23:05:23Z") {
+              contributionsCollection(from: "2021-09-05T23:05:23Z", to: "2022-09-05T23:05:23Z") {
                 contributionCalendar {
                   colors
                   totalContributions
