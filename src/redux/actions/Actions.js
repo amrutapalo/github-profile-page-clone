@@ -53,18 +53,32 @@ export const fetchUserRepo = () => {
   };
 };
 
+
+Date.prototype.minusDays = function (days) {
+  var date = new Date(this.valueOf());
+  date.setDate(date.getDate() - days);
+  return date;
+};
+
 export const fetchUserContributionData = () => {
   console.log("---- fetchUserContributionData");
+  let fromDate = new Date().minusDays(363);
+
+  let mm = String(fromDate.getMonth() + 1).padStart(2, "0"); //January is 0!
+  let dd = String(fromDate.getDate()).padStart(2, "0");
+  let yyyy = fromDate.getFullYear();
+  fromDate = yyyy + "-" +mm + "-" + dd;
+
   return async function (dispatch) {
-    let username = "erossignon";
+    let username = "amrutapalo";
     const headers = {
-      Authorization: `bearer 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`,
+      Authorization: `bearer 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`,
     };
     const body = {
       query: `query {
             user(login: "${username}") {
               name
-              contributionsCollection(from: "2021-12-31T23:05:23Z") {
+              contributionsCollection(from: "${fromDate}T23:05:23Z") {
                 contributionCalendar {
                   colors
                   totalContributions

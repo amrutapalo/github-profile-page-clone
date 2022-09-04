@@ -48,7 +48,7 @@ export const userContributionReducer = (state = initialUserContributionState, ac
   switch (action.type) {
     case ActionTypes.FETCH_CONTRIBUTION_DATA:
       console.log(action.payload);
-      return { ...state, data: action.payload.data.user.contributionsCollection ?  action.payload.data.user.contributionsCollection : {}};
+      return { ...state, data: action.payload};
     case ActionTypes.SET_DAILY_CONTRIBUTION_DATA:
       console.log(action.payload);
       //user.contributionsCollection
