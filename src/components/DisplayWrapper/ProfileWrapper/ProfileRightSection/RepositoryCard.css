@@ -124,6 +124,7 @@
   margin-bottom: 16px;
   margin-top: 8px;
   color: var(--color-fg-muted);
+  overflow: hidden;
 }
 
 .programming-language,
@@ -187,5 +188,10 @@
   .RepositoryCard {
     width: 100%;
     max-width: 100%;
+  }
+}
+@media (max-width: 369px) {
+  .RepositoryCard {
+    height: 11em;
   }
 }

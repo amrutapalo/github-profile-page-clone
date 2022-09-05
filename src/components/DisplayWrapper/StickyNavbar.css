@@ -73,3 +73,28 @@
   font-weight: 600;
   color: var(--color-fg-default);
 }
+
+@media (max-width: 510px) {
+  .sticky-navbar-container ul li a {
+    padding: 0 5px;
+    gap: 3px;
+    font-size: 0.6em;
+  }
+
+  .sticky-navbar-container ul {
+    gap: 3px;
+  }
+  .sticky-navbar-container ul li a .counter {
+    display: inline-block;
+    min-width: 15px;
+    padding: 0 2px;
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 18px;
+    color: var(--color-fg-default);
+    text-align: center;
+    background-color: var(--color-neutral-muted);
+    border: 1px solid var(--color-counter-border);
+    border-radius: 2em;
+  }
+}
