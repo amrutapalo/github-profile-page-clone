@@ -16,7 +16,7 @@ const ProfileRight = () => {
             <>
               <RepositoryList></RepositoryList>
               <ActivityHeatMap></ActivityHeatMap>
-              {/* <ContributionActivity></ContributionActivity> */}
+              <ContributionActivity></ContributionActivity>
             </>
           }
         ></Route>

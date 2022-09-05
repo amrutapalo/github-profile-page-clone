@@ -1,0 +1,98 @@
+:root {
+  --color-timeline-badge-bg: #eaeef2;
+  --clolr-svg: rgb(87, 96, 106);
+}
+
+.ContributionActivity {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  position: relative;
+  margin-top: 1.5em;
+}
+
+.activity-month {
+  font-size: 12px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  color: rgb(82, 82, 82);
+}
+
+.activity-month .hr {
+  width: 80%;
+  margin-left: 1em;
+  color: rgb(208, 208, 208);
+}
+
+.contribution-activity {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contribution-activity svg {
+  fill: var(--clolr-svg);
+}
+
+.badge {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  color: var(--color-fg-muted);
+  align-items: center;
+  background-color: var(--color-timeline-badge-bg);
+  border: 2px solid var(--color-canvas-default);
+  border-radius: 50%;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* .badge svg::before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: gray
+} */
+
+.contributionList{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contributionList::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: gray
+}
+
+.ContributionActivity button{
+    width: 90%;
+    color: rgb(0, 106, 255);
+    border: none;
+    border: 1px solid rgb(188, 188, 188);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 1em;
+    background-color: inherit;
+}
+.ContributionActivity button:hover{
+    background-color:  rgb(246, 246, 246);
+}
+
