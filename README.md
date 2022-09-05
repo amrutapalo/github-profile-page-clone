@@ -10,6 +10,7 @@ Components:
 6. Contribution Activity Timeline - HTML/CSS
 7. Responsive Navbar with mobile menu(hamburger-menu)
 
+Set your token as GITHUB_API_TOKEN in the enviroment variables before starting.
 
 Screenshots:
 
