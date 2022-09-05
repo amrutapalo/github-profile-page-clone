@@ -73,7 +73,7 @@ export const fetchUserContributionData = () => {
   return async function (dispatch) {
     let username = "erossignon";
     const headers = {
-      Authorization: `bearer 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`,
+      Authorization: `bearer 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`,
     };
     const body = {
       query: `query {
