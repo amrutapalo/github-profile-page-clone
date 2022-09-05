@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./StickyNavbar.css";
 
 import { Link } from "react-router-dom";
 
 const StickyNavbar = () => {
+  const [active, setActive] = useState("overview");
+
   const userData = useSelector((state) => state);
   // console.log(userData.userRepoReducer.data.length);
   return (
     <div className="sticky-navbar">
       <div className="sticky-navbar-container">
         <ul>
-          <li className="active">
-            <Link to="/">
+          <li className={`${active=="overview" ? "active" : ""}`}>
+            <Link to="/" onClick={() => setActive("overview")}>
               <svg
                 aria-hidden="true"
                 height="16"
@@ -30,8 +32,8 @@ const StickyNavbar = () => {
               Overview
             </Link>
           </li>
-          <li>
-            <Link to="/repositories" onClick={() => console.log("clicked")}>
+          <li className={`${active=="repositories" ? "active" : ""}`}>
+            <Link to="/repositories" onClick={() => setActive("repositories")}>
               <svg
                 aria-hidden="true"
                 height="16"
