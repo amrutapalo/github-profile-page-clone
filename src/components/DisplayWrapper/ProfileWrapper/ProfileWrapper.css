@@ -5,3 +5,9 @@
     width: 100%;
     gap: 24px;
 }
+
+@media (max-width: 955px) {
+    .ProfileWrapper{
+       flex-direction: column;
+    }
+  }

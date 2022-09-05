@@ -61,6 +61,8 @@
 .RepositoryCard {
   padding-right: 16px;
   padding-left: 16px;
+  overflow: hidden;
+  max-width: 456px;
 }
 
 .repo-list-item-content {
@@ -168,9 +170,22 @@
   justify-content: space-between;
 }
 
-.fork-count, .starred-count{
-    display: flex;
-    gap: 3px;
-    justify-content: center;
-    align-items: center;
+.fork-count,
+.starred-count {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1170px) {
+  .RepositoryCard {
+    width: 45%;
+  }
+}
+@media (max-width: 955px) {
+  .RepositoryCard {
+    width: 100%;
+    max-width: 100%;
+  }
 }

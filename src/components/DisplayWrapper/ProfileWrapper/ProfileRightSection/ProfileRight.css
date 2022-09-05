@@ -1,3 +1,9 @@
-.ProfileRight{
-    width: 72%;
+.ProfileRight {
+  width: 72%;
+}
+
+@media (max-width: 955px) {
+  .ProfileRight {
+    width: 100%;
+  }
 }

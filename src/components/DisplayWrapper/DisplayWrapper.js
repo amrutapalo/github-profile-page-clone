@@ -11,5 +11,4 @@ const DisplayWrapper = () => {
     </div>
   )
 }
-
 export default DisplayWrapper;
